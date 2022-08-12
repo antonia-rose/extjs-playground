@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+         <meta charset="UTF-8">
+         <title>CodePen - DUMEN-1115 Window Content</title>
+        
+    </head>
+  <body>
+    <h1>hallo welt</h1>
+    <button id="openWindow">Öffne E-Mail</button>
+    <script>
+        const button = document.getElementById("openWindow");
+        button.addEventListener("click", openNewWindow);
+
+        function openNewWindow() {
+        window.open("http://127.0.0.1:3001/checkeditor.html", '_blank', 'location=yes,height=570,width=750,scrollbars=yes,status=yes')
+        }
+     </script>
+</body> 
+  
+  
+  
+  
+   

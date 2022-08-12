@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+         <meta charset="UTF-8">
+         <title>CodePen - DUMEN-1115 Window Content</title>
+         <script src="https://cdn.sencha.com/ext/gpl/5.1.0/build/ext-all-debug.js"></script>          
+    </head>
+  <body>
+    <h1>hallo welt</h1>
+    <script>
+        Ext.application({
+            name : 'Fiddle',
+
+            launch : function() {
+                Ext.create('Ext.panel.Panel', {
+                    renderTo: Ext.getBody(),
+                    fullscreen: true,
+                    padding: 20,
+                    items: [{
+                        xtype: 'component',
+                        width: '100%',
+                        autoEl: {
+                            tag: 'iframe',
+                            srcdoc: "<html><body><textarea></textarea></body></html>",
+                            frameborder: 0,
+                            scrolling: 'auto',
+                            height: '100%'
+                        }
+                    }]
+                });
+            }
+        });
+
+      </script>
+</body> 
+  
+</html>
+  
+  
+   

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+         <meta charset="UTF-8">
+         <title>CodePen - DUMEN-1115 Window Content</title>
+         <script src="https://cdn.sencha.com/ext/gpl/4.2.1/ext-all.js"></script>
+
+    <!-- Include external CSS. -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/codemirror.min.css">
+
+    <!-- Include Editor style. -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.8.5/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.8.5/css/froala_style.min.css" rel="stylesheet" type="text/css" />
+  
+         <script>
+            Ext.application({
+    name: 'Ext JS & Froala Example for Modern & Classic Themes',
+
+    launch: function () {
+        var textAreaValue = '<p>Jemand musste Josef K. verleumdet haben, denn ohne dass er etwas Böses getan hätte, wurde er eines Morgens verhaftet. »Wie ein Hund!« sagte er, es war, als sollte die Scham ihn überleben. Als Gregor Samsa eines Morgens aus unruhigen Träumen erwachte, fand er sich in seinem Bett zu einem ungeheueren Ungeziefer verwandelt. Und es war ihnen wie eine Bestätigung ihrer neuen Träume und guten Absichten, als am Ziele ihrer Fahrt die Tochter als erste sich erhob und ihren jungen Körper dehnte. »Es ist ein eigentümlicher Apparat«, sagte der Offizier zu dem Forschungsreisenden und überblickte mit einem gewissermaßen bewundernden Blick den ihm doch wohlbekannten Apparat. Sie hätten noch ins Boot springen können, aber der Reisende hob ein schweres, geknotetes Tau vom Boden, drohte ihnen damit und hielt sie dadurch von dem Sprunge ab. In den letzten Jahrzehnten ist das Interesse an Hungerkünstlern sehr zurückgegangen. Aber sie überwanden sich, umdrängten den Käfig und wollten sich gar nicht fortrühren.Jemand musste Josef K. verleumdet haben, denn ohne dass er etwas Böses getan hätte, wurde er eines Morgens verhaftet. »Wie ein Hund!« sagte er, es war, als sollte die Scham ihn überleben.</p>';
+
+        var displayHtml = function () {
+            var htmlContent = $('#mytextareaid textarea').froalaEditor('html.get');
+            Ext.Msg.alert('Status', htmlContent);
+        }
+
+        var renderEditor = function () {
+            $('#mytextareaid textarea').froalaEditor({
+                // height = textarea height - padding - border
+                height: 400 - 42,
+                width: '100%'
+            });
+        }
+
+        Ext.create('Ext.panel.Panel', {
+            renderTo: Ext.getBody(),
+            fullscreen: true,
+            padding: 20,
+            items: [{
+                xtype: 'panel',
+                padding: 20,
+                items: [{
+                    xtype: 'textareafield',
+                    id: 'mytextareaid',
+                    width: '100%',
+                    height: 400,
+                    value: textAreaValue,
+                }],
+                listeners: {
+                    boxready: renderEditor, // classic listener
+                    painted: renderEditor, // modern listener
+                }
+            }, {
+                xtype: 'button',
+                text: 'Display HTML',
+                margin: '-10 0 10 20',
+                handler: displayHtml, // classic listener
+                listeners: {
+                    tap: displayHtml, // modern listener
+                }
+            }]
+        });
+
+    }
+});
+
+          </script>
+          
+    </head>
+  <body>
+    <h1>hallo welt</h1>
+     <!-- Include external JS libs. -->
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/codemirror.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/mode/xml/xml.min.js"></script>
+ 
+     <!-- Include Editor JS files. -->
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.8.5/js/froala_editor.pkgd.min.js"></script>
+ 
+     <!-- Initialize the editor. -->
+     <script> $(function() { $('textarea').froalaEditor() }); </script>
+</body> 
+  
+  
+  
+  
+   
